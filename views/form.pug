@@ -1,0 +1,10 @@
+extends layout 
+
+block form
+    h1 New Message:
+    form(action="/new", method="post")
+        label(for="name") Name (required):
+        input(id="name" type="text", name="name" required)
+        label(for="message") Message (required):
+        textarea( id="message" name="message", cols="30", rows="10" required)
+        button(type="submit") Post

@@ -1,5 +1,13 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+block messages
+  div.heading-bar
+    h1 Messages
+    button.new
+      a(href="/new") Post new message
+  ul.messages
+    each message in messages
+      li.message
+        p.text= message.text 
+        p.details #[b #{message.user}] - #{message.added.toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' })}
+  

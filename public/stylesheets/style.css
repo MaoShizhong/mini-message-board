@@ -1,8 +1,36 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+a,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.heading-bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.message {
+    margin-block: 2rem;
+    list-style: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > input,
+form > textarea {
+    margin-bottom: 1rem;
+    resize: none;
+}
+
+button[type='submit'] {
+    align-self: flex-end;
 }
