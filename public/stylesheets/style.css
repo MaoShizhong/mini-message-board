@@ -1,6 +1,9 @@
 body {
-    padding: 50px;
     font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    margin: 0;
 }
 
 a,
@@ -9,20 +12,33 @@ a:visited {
     color: black;
 }
 
-.heading-bar {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+header {
+    align-self: center;
+}
+
+main {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
 }
 
 .message {
-    margin-block: 2rem;
-    list-style: none;
+    position: absolute;
+    padding: 0.6rem;
+    min-height: 10rem;
+    width: min(15rem, 50vw);
 }
 
 form {
     display: flex;
+    align-self: center;
+    width: min(500px, 95vw);
     flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 form > input,
