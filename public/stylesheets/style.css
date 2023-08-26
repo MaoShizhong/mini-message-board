@@ -23,8 +23,9 @@ main {
 }
 
 .message {
+    border-radius: 0.4rem;
     position: absolute;
-    padding: 0.6rem;
+    padding: 1rem;
     min-height: 10rem;
     width: min(15rem, 50vw);
 }

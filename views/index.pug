@@ -6,8 +6,8 @@ block messages
     button.new
       a(href="/new") Post new message
   main
-    each message in messages
+    each message in messageList
       div.message(style=`top:${message.position.top}; right:${message.position.right}; background-color:${message.color.backgroundColor}; color:${message.color.fontColor}`)
         p.text= message.text 
-        p.details #[b #{message.author}] - #{message.added.toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' })}
+        p.details #[b #{message.author}] - #{message.date.toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' })}
   

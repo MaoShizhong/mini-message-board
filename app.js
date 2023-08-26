@@ -8,18 +8,13 @@ const indexRouter = require('./routes/index');
 
 const app = express();
 
-// set up live reloading
-const livereload = require('livereload');
-const connectLiveReload = require('connect-livereload');
+// Set up mongoose connection
+require('dotenv').config();
+const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 
-const liveReloadServer = livereload.createServer();
-liveReloadServer.server.once('connection', () => {
-    setTimeout(() => {
-        liveReloadServer.refresh('/');
-    }, 10);
-});
-
-app.use(connectLiveReload());
+const main = async () => await mongoose.connect(process.env.CONNECTION_STRING);
+main().catch((err) => console.error(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
