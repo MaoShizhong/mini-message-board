@@ -18,10 +18,13 @@ function shouldMakeFontBlack(red, green, blue) {
 }
 
 function randomPosition() {
-    const top = ~~(Math.random() * 85);
-    const right = ~~(Math.random() * 85);
+    const top = ~~(Math.random() * 90);
+    const left = ~~(Math.random() * 90);
 
-    return { top: `${top}%`, right: `${right}%` };
+    return {
+        top: `min(${top}%, 100svh - 10rem)`,
+        left: `min(${left}%, 100% - min(15rem, 50vw))`,
+    };
 }
 
 module.exports = {

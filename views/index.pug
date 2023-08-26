@@ -7,7 +7,7 @@ block messages
       a(href="/new") Post new message
   main
     each message in messageList
-      div.message(style=`top:${message.position.top}; right:${message.position.right}; background-color:${message.color.backgroundColor}; color:${message.color.fontColor}`)
+      div.message(style=`top:${message.position.top}; left:${message.position.left}; background-color:${message.color.backgroundColor}; color:${message.color.fontColor}` draggable="true")
         p.text= message.text 
         p.details #[b #{message.author}] - #{message.date.toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' })}
-  
+  script(src="/javascripts/drag.js")

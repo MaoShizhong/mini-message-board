@@ -24,10 +24,12 @@ main {
 
 .message {
     border-radius: 0.4rem;
+    box-sizing: border-box;
     position: absolute;
     padding: 1rem;
     min-height: 10rem;
     width: min(15rem, 50vw);
+    cursor: grab;
 }
 
 form {

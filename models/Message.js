@@ -12,7 +12,7 @@ const MessageSchema = new Schema({
     },
     position: {
         top: { type: String, required: true },
-        right: { type: String, required: true },
+        left: { type: String, required: true },
     },
 });
 
