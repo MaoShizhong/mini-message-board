@@ -44,4 +44,10 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
+['SIGINT', 'exit'].forEach((exitEvent) => {
+    process.on(exitEvent, () => {
+        mongoose.connection.close();
+    });
+});
+
 module.exports = app;

@@ -9,9 +9,10 @@ const Message = require('../models/Message');
 router.get('/', messageController.message_list);
 
 /* new message */
-router.get('/new', (req, res, next) => res.render('form'));
+router.get('/new', (req, res) => res.render('form'));
 
-router.post('/new', async (req, res, next) => {
+router.post('/new', async (req, res) => {
+    req.body;
     await Message.create({
         text: req.body.message,
         author: req.body.name,
